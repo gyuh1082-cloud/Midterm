@@ -1,0 +1,284 @@
+export default function AcademicProjectPresentationSite() {
+  const sections = [
+    { id: 'overview', label: 'Project Overview' },
+    { id: 'research', label: 'Research Context' },
+    { id: 'process', label: 'Design Thinking' },
+    { id: 'ai', label: 'AI-Assisted Exploration' },
+    { id: 'proposal', label: 'Final Proposal' },
+    { id: 'evaluation', label: 'Impact & Evaluation' },
+    { id: 'team', label: 'Reflection' },
+  ];
+
+  const researchCards = [
+    {
+      title: 'Problem Framing',
+      text: 'Students often navigate fragmented academic support systems, making it difficult to identify the right resources, understand next steps, and sustain momentum during demanding project-based courses.'
+    },
+    {
+      title: 'Audience Insights',
+      text: 'Primary users include undergraduate researchers, capstone students, and faculty mentors who need a clearer bridge between inquiry, feedback, and actionable project planning.'
+    },
+    {
+      title: 'Opportunity',
+      text: 'An AI-supported academic companion can transform scattered guidance into a structured, reflective, and adaptive learning journey without replacing human mentorship.'
+    }
+  ];
+
+  const processSteps = [
+    'Discover — mapped stakeholder needs, friction points, and learning bottlenecks.',
+    'Define — narrowed the challenge to improving research clarity, planning confidence, and iterative decision making.',
+    'Develop — explored interface directions, content systems, and interaction patterns informed by academic workflows.',
+    'Deliver — proposed a final platform concept with measurable educational value and a realistic implementation path.'
+  ];
+
+  const aiExperiments = [
+    {
+      title: 'Concept Expansion',
+      detail: 'Generative AI was used to broaden early ideation, compare possible directions, and surface alternative service models before narrowing the scope.'
+    },
+    {
+      title: 'Research Synthesis',
+      detail: 'AI-assisted clustering helped organize recurring themes from notes, feedback, and observational findings into coherent design priorities.'
+    },
+    {
+      title: 'Scenario Prototyping',
+      detail: 'Prompt-based exploration supported fast drafting of user journeys, conversation flows, and interface microcopy for academic support moments.'
+    },
+    {
+      title: 'Critical Review',
+      detail: 'Outputs were evaluated for credibility, bias, practicality, and alignment with pedagogical goals; human judgment remained central throughout.'
+    }
+  ];
+
+  const deliverables = [
+    {
+      title: 'Research Dashboard',
+      text: 'A guided workspace that helps students frame questions, track evidence, and organize references into meaningful insight clusters.'
+    },
+    {
+      title: 'AI Mentor Layer',
+      text: 'A conversational support feature that suggests next steps, explains research gaps, and helps translate feedback into action plans.'
+    },
+    {
+      title: 'Presentation Builder',
+      text: 'A structured storyboarding system that transforms research and design rationale into a polished final presentation for instructors and peers.'
+    }
+  ];
+
+  const metrics = [
+    'Reduced time spent locating relevant academic resources',
+    'Improved confidence in shaping research direction',
+    'Stronger quality of project reflection and iteration',
+    'More coherent final presentations and proposal narratives'
+  ];
+
+  return (
+    <div className="min-h-screen bg-[#f4f1ec] text-slate-800">
+      <div className="mx-auto flex max-w-7xl flex-col lg:flex-row">
+        <aside className="lg:sticky lg:top-0 lg:h-screen lg:w-[27rem] bg-[#6f7f8f] text-white shadow-2xl">
+          <div className="flex h-full flex-col justify-between px-8 py-10">
+            <div>
+              <div className="mb-8 overflow-hidden rounded-3xl border border-white/20 bg-white/10">
+                <div className="h-56 w-full bg-[linear-gradient(135deg,#dce7f2_0%,#b1c1d6_45%,#6f7f8f_100%)]" />
+              </div>
+              <p className="mb-3 text-sm uppercase tracking-[0.25em] text-white/70">Academic Project Presentation</p>
+              <h1 className="text-4xl font-semibold leading-tight">AI-Supported Research Guidance for Project-Based Learning</h1>
+              <p className="mt-4 max-w-md text-[15px] leading-7 text-white/80">
+                A complete academic website presentation documenting research context, design thinking,
+                AI-assisted exploration, and a final proposal for a more reflective student project journey.
+              </p>
+            </div>
+
+            <div className="mt-10 space-y-8">
+              <nav className="rounded-3xl border border-white/15 bg-white/10 p-5 backdrop-blur">
+                <ul className="space-y-3 text-sm">
+                  {sections.map((section) => (
+                    <li key={section.id}>
+                      <a
+                        href={`#${section.id}`}
+                        className="block rounded-xl px-3 py-2 text-white/80 transition hover:bg-white/10 hover:text-white"
+                      >
+                        {section.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+
+              <div className="rounded-3xl border border-white/15 bg-white/10 p-5 text-sm leading-7 text-white/80 backdrop-blur">
+                <p className="font-medium text-white">Project Theme</p>
+                <p>Bridging research, design strategy, and AI-assisted reflection in higher education.</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <main className="flex-1 px-6 py-8 md:px-10 lg:px-14 lg:py-12">
+          <div className="space-y-8">
+            <Section id="overview" kicker="01" title="Project Overview">
+              <p className="text-lg leading-8 text-slate-600">
+                This project investigates how AI can support student researchers during complex academic work
+                without diminishing critical thinking, authorship, or instructor oversight. The goal is to
+                design a platform experience that helps students move from uncertainty to direction through
+                structured guidance, reflective prompts, and better visibility into their research process.
+              </p>
+            </Section>
+
+            <Section id="research" kicker="02" title="Research Context">
+              <div className="grid gap-5 md:grid-cols-3">
+                {researchCards.map((card) => (
+                  <InfoCard key={card.title} title={card.title} text={card.text} />
+                ))}
+              </div>
+              <div className="mt-6 rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+                <h3 className="text-xl font-semibold">Key Research Question</h3>
+                <p className="mt-3 text-slate-600 leading-8">
+                  How might we design an AI-assisted academic support system that strengthens student agency,
+                  improves project clarity, and makes the research-to-presentation process more visible,
+                  navigable, and reflective?
+                </p>
+              </div>
+            </Section>
+
+            <Section id="process" kicker="03" title="Design Thinking Process">
+              <div className="grid gap-5 lg:grid-cols-[1.2fr,0.8fr]">
+                <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+                  <div className="space-y-5">
+                    {processSteps.map((step, index) => (
+                      <div key={step} className="flex gap-4">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-100 text-sm font-semibold text-slate-700">
+                          0{index + 1}
+                        </div>
+                        <p className="pt-1 leading-7 text-slate-600">{step}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="rounded-[2rem] bg-[#dce4ec] p-8 shadow-sm">
+                  <p className="text-sm uppercase tracking-[0.2em] text-slate-500">Design Principle</p>
+                  <h3 className="mt-3 text-2xl font-semibold leading-tight">Support the learner’s thinking, not just the learner’s output.</h3>
+                  <p className="mt-4 leading-8 text-slate-700">
+                    The interface is intentionally calm, legible, and section-driven so that the final website
+                    mirrors the structure of a rigorous academic narrative rather than a conventional product pitch.
+                  </p>
+                </div>
+              </div>
+            </Section>
+
+            <Section id="ai" kicker="04" title="AI-Assisted Exploration">
+              <div className="grid gap-5 md:grid-cols-2">
+                {aiExperiments.map((item) => (
+                  <div key={item.title} className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+                    <h3 className="text-xl font-semibold">{item.title}</h3>
+                    <p className="mt-3 leading-8 text-slate-600">{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 rounded-[2rem] border border-slate-200 bg-[#fbfaf8] p-7 shadow-sm">
+                <h3 className="text-xl font-semibold">Critical Position</h3>
+                <p className="mt-3 leading-8 text-slate-600">
+                  AI was treated as a co-exploration tool rather than an authority. Every generated idea,
+                  summary, or scenario required human review, contextual interpretation, and ethical filtering
+                  before being included in the design direction.
+                </p>
+              </div>
+            </Section>
+
+            <Section id="proposal" kicker="05" title="Final Proposal">
+              <div className="grid gap-6 lg:grid-cols-3">
+                {deliverables.map((item) => (
+                  <div key={item.title} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
+                    <div className="h-44 bg-[linear-gradient(135deg,#f3efe8_0%,#d9e2ec_60%,#a5b7c8_100%)]" />
+                    <div className="p-7">
+                      <h3 className="text-xl font-semibold">{item.title}</h3>
+                      <p className="mt-3 leading-8 text-slate-600">{item.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 rounded-[2rem] bg-[#6f7f8f] p-8 text-white shadow-sm">
+                <p className="text-sm uppercase tracking-[0.2em] text-white/70">Proposal Summary</p>
+                <p className="mt-4 max-w-4xl text-lg leading-8 text-white/90">
+                  The final concept is a modular academic guidance platform that combines project framing,
+                  AI-assisted support, and presentation preparation into one coherent environment. Its purpose is
+                  not to automate scholarship, but to make reflective, research-driven work easier to organize,
+                  iterate, and communicate.
+                </p>
+              </div>
+            </Section>
+
+            <Section id="evaluation" kicker="06" title="Impact & Evaluation">
+              <div className="grid gap-5 lg:grid-cols-[0.95fr,1.05fr]">
+                <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+                  <h3 className="text-xl font-semibold">Success Indicators</h3>
+                  <ul className="mt-5 space-y-4 text-slate-600">
+                    {metrics.map((metric) => (
+                      <li key={metric} className="flex gap-3 leading-7">
+                        <span className="mt-2 h-2.5 w-2.5 rounded-full bg-slate-400" />
+                        <span>{metric}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+                  <h3 className="text-xl font-semibold">Proposed Evaluation Methods</h3>
+                  <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                    <MiniMetric label="Usability Sessions" value="08" detail="Task-based testing with students completing a guided project milestone." />
+                    <MiniMetric label="Reflection Quality" value="+32%" detail="Estimated improvement in depth and specificity of project reflection responses." />
+                    <MiniMetric label="Planning Confidence" value="4.5/5" detail="Target self-reported confidence after using structured AI-supported planning tools." />
+                    <MiniMetric label="Instructor Readability" value="High" detail="Clearer project narratives and stronger alignment between evidence and proposal outcomes." />
+                  </div>
+                </div>
+              </div>
+            </Section>
+
+            <Section id="team" kicker="07" title="Reflection & Next Steps">
+              <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+                <p className="leading-8 text-slate-600">
+                  This academic website presents a complete project story: a defined challenge, a research-backed
+                  rationale, an iterative design process, a transparent use of AI in exploration, and a final proposal
+                  that can be evaluated in real educational contexts. Future work would include pilot testing,
+                  feedback loops for faculty, accessibility audits, and deeper safeguards around citation integrity
+                  and AI transparency.
+                </p>
+              </div>
+            </Section>
+          </div>
+        </main>
+      </div>
+    </div>
+  );
+}
+
+function Section({ id, kicker, title, children }) {
+  return (
+    <section id={id} className="rounded-[2.25rem] border border-slate-200/80 bg-[#f8f6f2] p-6 shadow-sm md:p-8">
+      <div className="mb-6 flex items-end justify-between gap-4 border-b border-slate-200 pb-5">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">Section {kicker}</p>
+          <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-800">{title}</h2>
+        </div>
+      </div>
+      {children}
+    </section>
+  );
+}
+
+function InfoCard({ title, text }) {
+  return (
+    <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+      <h3 className="text-xl font-semibold">{title}</h3>
+      <p className="mt-3 leading-8 text-slate-600">{text}</p>
+    </div>
+  );
+}
+
+function MiniMetric({ label, value, detail }) {
+  return (
+    <div className="rounded-[1.5rem] bg-slate-50 p-5">
+      <p className="text-sm uppercase tracking-[0.16em] text-slate-400">{label}</p>
+      <p className="mt-2 text-3xl font-semibold text-slate-800">{value}</p>
+      <p className="mt-3 text-sm leading-7 text-slate-600">{detail}</p>
+    </div>
+  );
+}
