@@ -4,813 +4,149 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inclusive Harlem | Montefiore Square Redesign</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    html, body, div, span, applet, object, iframe,
-    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-    a, abbr, acronym, address, big, cite, code,
-    del, dfn, em, img, ins, kbd, q, s, samp,
-    small, strike, strong, sub, sup, tt, var,
-    b, u, i, center, dl, dt, dd, ol, ul, li,
-    fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
-    article, aside, canvas, details, embed,
-    figure, figcaption, footer, header, hgroup,
-    menu, nav, output, ruby, section, summary,
-    time, mark, audio, video {
-      margin: 0;
-      padding: 0;
-      border: 0;
-      font: inherit;
-      vertical-align: baseline;
-    }
 
-    article, aside, details, figcaption, figure,
-    footer, header, hgroup, menu, nav, section {
-      display: block;
-    }
-
-    body { line-height: 1; }
-    ol, ul { list-style: none; }
-    blockquote, q { quotes: none; }
-    blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
-    table { border-collapse: collapse; border-spacing: 0; }
-
-    body {
-      background: #fff;
-      color: #888;
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 18pt;
-      font-weight: 400;
-      line-height: 1.75em;
-    }
-
-    a {
-      border-bottom: dotted 1px;
-      color: #4acaa8;
-      text-decoration: none;
-      transition: color 0.2s ease, border-color 0.2s ease;
-    }
-
-    a:hover {
-      border-bottom-color: transparent;
-      color: #4acaa8;
-    }
-
-    strong, b {
-      color: #777;
-      font-weight: 700;
-    }
-
-    p { margin: 0 0 2em 0; }
-
-    h1, h2, h3, h4, h5, h6 {
-      color: #666;
-      font-weight: 700;
-      line-height: 1em;
-      margin: 0 0 0.75em 0;
-    }
-
-    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-      border: 0;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    h2 {
-      font-size: 2em;
-      line-height: 1.5em;
-    }
-
-    h3 {
-      font-size: 1.5em;
-      line-height: 1.5em;
-    }
-
-    h4 {
-      font-size: 1.1em;
-      line-height: 1.5em;
-    }
-
-    ul, ol {
-      margin: 0 0 2em 0;
-      padding-left: 1.25em;
-    }
-
-    ul li { padding-left: 0.5em; }
-    ol li { padding-left: 0.25em; }
-
-    .container {
-      margin: 0 auto;
-      max-width: 100%;
-      width: 45em;
-    }
-
-    #header {
-      background: #4acaa8;
-      color: rgba(255, 255, 255, 0.55);
-      height: 100%;
-      left: 0;
-      padding: 8em 4em;
-      position: fixed;
-      text-align: right;
-      top: 0;
-      width: 23em;
-    }
-
-    #header h1, #header h2, #header h3, #header h4, #header h5, #header h6 {
-      color: #fff;
-    }
-
-    #header header p {
-      color: rgba(255, 255, 255, 0.65);
-      margin: 1em 0 0 0;
-    }
-
-    #header .image.avatar {
-      display: block;
-      margin: 0 0 2.75em 0;
-      width: 100%;
-    }
-
-    #header .image.avatar .avatar-art {
-      background: linear-gradient(135deg, #d9ece7 0%, #a8d5cc 45%, #60bfa3 100%);
-      border-radius: 100%;
-      display: inline-block;
-      height: 8em;
-      position: relative;
-      width: 8em;
-      box-shadow: inset 0 0 0 8px rgba(255,255,255,0.15);
-    }
-
-    #header .image.avatar .avatar-art:before,
-    #header .image.avatar .avatar-art:after {
-      content: '';
-      position: absolute;
-      background: rgba(255,255,255,0.25);
-      border-radius: 999px;
-    }
-
-    #header .image.avatar .avatar-art:before {
-      width: 3.5em;
-      height: 3.5em;
-      left: 1.1em;
-      top: 1.2em;
-      border-radius: 50%;
-    }
-
-    #header .image.avatar .avatar-art:after {
-      width: 5.2em;
-      height: 2.1em;
-      left: 1.4em;
-      bottom: 1.1em;
-    }
-
-    #header #logo { margin: 0 0 0.5em 0; }
-    #header #nav { margin: 4em 0 0 0; }
-
-    #header #nav ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    #header #nav ul li {
-      border-top: solid 2px rgba(255, 255, 255, 0.1);
-      display: block;
-      padding: 0;
-    }
-
-    #header #nav ul li:first-child { border-top: 0; }
-
-    #header #nav ul li a {
-      border: 0;
-      color: rgba(255, 255, 255, 0.35);
-      display: block;
-      padding: 0.85em 0;
-      text-decoration: none;
-    }
-
-    #header #nav ul li a.active,
-    #header #nav ul li a:hover { color: #fff; }
-
-    #header footer {
-      bottom: 4em;
-      left: 4em;
-      position: absolute;
-    }
-
-    #header footer .icons {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    #header footer .icons li {
-      color: rgba(255,255,255,0.55);
-      display: block;
-      font-size: 0.8em;
-      margin: 0 0 0.8em 0;
-      padding: 0;
-    }
-
-    #wrapper {
-      background: #fff;
-      margin-left: 23em;
-    }
-
-    #main > section { border-top: solid 6px #f4f4f4; }
-
-    #main > section > .container {
-      padding: 6em 0 4em 0;
-    }
-
-    .image {
-      border-radius: 0.35em;
-      border: 0;
-      display: inline-block;
-      position: relative;
-    }
-
-    .image.fit {
-      display: block;
-      margin: 0 0 2em 0;
-      width: 100%;
-    }
-
-    .image.main {
-      display: block;
-      height: 20em;
-      margin: 0 0 4em 0;
-      width: 100%;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #e8f3f0 0%, #c5e6dc 48%, #8dd3c0 100%);
-      overflow: hidden;
-    }
-
-    .hero-layer {
-      position: absolute;
-      border: solid 2px rgba(255,255,255,0.35);
-      background: rgba(255,255,255,0.18);
-    }
-
-    .hero-layer.a {
-      left: 4em;
-      top: 3.5em;
-      width: 14em;
-      height: 7em;
-      border-radius: 3em;
-    }
-
-    .hero-layer.b {
-      right: 5em;
-      top: 4.25em;
-      width: 7em;
-      height: 7em;
-      border-radius: 1.5em;
-    }
-
-    .hero-layer.c {
-      left: 7em;
-      right: 7em;
-      bottom: 3em;
-      height: 3.2em;
-      border-radius: 999px;
-    }
-
-    header.major h2 {
-      color: #4acaa8;
-      font-size: 3.5em;
-      line-height: 1.15em;
-    }
-
-    header.major p {
-      color: #999;
-      font-size: 1.3em;
-      line-height: 1.65em;
-      margin: 0.5em 0 0 0;
-    }
-
-    .actions {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .actions li {
-      display: inline-block;
-      margin-right: 1em;
-      padding: 0;
-    }
-
-    .button {
-      appearance: none;
-      border-radius: 0.35em;
-      border: solid 2px #e4e4e4;
-      color: #666 !important;
-      cursor: pointer;
-      display: inline-block;
-      font-size: 0.8em;
-      font-weight: 700;
-      height: 3.5em;
-      letter-spacing: 0.25em;
-      line-height: 3.5em;
-      padding: 0 1.75em;
-      text-align: center;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .button.primary {
-      background: #4acaa8;
-      border-color: #4acaa8;
-      color: #fff !important;
-    }
-
-    .features article {
-      align-items: center;
-      display: flex;
-      margin: 0 0 3em 0;
-    }
-
-    .features article:last-child { margin-bottom: 0; }
-
-    .features article .image {
-      flex-shrink: 0;
-      width: 18em;
-      margin-right: 2.5em;
-    }
-
-    .features article .image .thumb,
-    .site-box,
-    .final-plan,
-    .final-render {
-      display: block;
-      width: 100%;
-      min-height: 12em;
-      background: linear-gradient(135deg, #eef7f4 0%, #d6eee7 48%, #9cd8c8 100%);
-      border-radius: 0.35em;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .features article .image .thumb:before,
-    .features article .image .thumb:after,
-    .site-box:before,
-    .site-box:after,
-    .final-plan:before,
-    .final-plan:after,
-    .final-render:before,
-    .final-render:after {
-      content: '';
-      position: absolute;
-      background: rgba(255,255,255,0.2);
-    }
-
-    .features article .image .thumb:before {
-      left: 1.25em;
-      top: 1.25em;
-      width: 5em;
-      height: 5em;
-      border-radius: 50%;
-    }
-
-    .features article .image .thumb:after {
-      right: 1.25em;
-      bottom: 1.25em;
-      width: 6.5em;
-      height: 2.5em;
-      border-radius: 999px;
-    }
-
-    .features article .inner { flex-grow: 1; }
-
-    .feature-icons {
-      cursor: default;
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .feature-icons li {
-      border-top: solid 1px #e4e4e4;
-      display: inline-block;
-      margin: 1em 2em 0 0;
-      min-width: 12em;
-      padding: 1em 0 0 0;
-    }
-
-    .box.alt { margin-bottom: 2em; }
-
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      margin-left: -2em;
-    }
-
-    .row > * {
-      padding-left: 2em;
-      box-sizing: border-box;
-    }
-
-    .row.gtr-50 { margin-left: -1em; }
-    .row.gtr-50 > * { padding-left: 1em; }
-    .row.gtr-uniform > * { margin-top: 1em; }
-
-    .col-4 { width: 33.33333%; }
-    .col-6 { width: 50%; }
-    .col-8 { width: 66.66667%; }
-    .col-12 { width: 100%; }
-
-    .site-box,
-    .final-plan,
-    .final-render { height: 15em; }
-
-    .site-a:before, .site-b:before, .site-c:before, .site-d:before,
-    .final-plan:before, .final-render:before {
-      left: 1.5em;
-      right: 1.5em;
-      top: 1.25em;
-      bottom: 1.25em;
-      border: 2px solid rgba(255,255,255,0.35);
-      background: transparent;
-    }
-
-    .site-a:after, .site-b:after, .site-c:after, .site-d:after,
-    .final-plan:after, .final-render:after {
-      left: 2.5em;
-      right: 2.5em;
-      bottom: 2em;
-      height: 1.2em;
-      border-radius: 999px;
-    }
-
-    .final-plan {
-      background: linear-gradient(135deg, #edf7f4 0%, #ccebe1 50%, #88ccb9 100%);
-    }
-
-    .final-render {
-      background: linear-gradient(135deg, #eef6f2 0%, #d8ede6 44%, #7fc8b4 100%);
-    }
-
-    .thumb-a, .thumb-b, .thumb-c, .thumb-d, .thumb-e, .thumb-f,
-    .thumb-g, .thumb-h, .thumb-i, .concept-a, .concept-b, .concept-c,
-    .ai-a, .ai-b, .ai-c {
-      background: linear-gradient(135deg, #eff8f5 0%, #d8eee7 45%, #8ed0bf 100%) !important;
-    }
-
-    @media screen and (max-width: 1280px) {
-      body { font-size: 14pt; }
-      #header { padding: 6em 3em; width: 20em; }
-      #wrapper { margin-left: 20em; }
-      header.major h2 { font-size: 2.75em; }
-    }
-
-    @media screen and (max-width: 980px) {
-      #header {
-        height: auto;
-        left: auto;
-        padding: 2.5em 2.5em 1em 2.5em;
-        position: relative;
-        text-align: left;
-        top: auto;
-        width: 100%;
-      }
-
-      #header footer {
-        bottom: auto;
-        left: auto;
-        margin-top: 2em;
-        position: relative;
-      }
-
-      #wrapper { margin-left: 0; }
-
-      #main > section > .container {
-        padding: 4em 2.5em 2em 2.5em;
-        width: 100%;
-      }
-
-      .features article { display: block; }
-      .features article .image {
-        display: block;
-        margin: 0 0 2em 0;
-        width: 100%;
-      }
-
-      .col-12-medium { width: 100%; }
-    }
-
-    @media screen and (max-width: 736px) {
-      body { font-size: 12pt; }
-      .image.main { height: 12em; }
-      header.major h2 { font-size: 2em; }
-      .button { letter-spacing: 0.15em; padding: 0 1.25em; }
-      .actions li { display: block; margin: 0 0 1em 0; }
-      .actions li:last-child { margin-bottom: 0; }
-      .feature-icons li { display: block; margin-right: 0; }
-      .row { margin-left: 0; }
-      .row > * { padding-left: 0; width: 100%; }
-    }
-  </style>
+  <!-- LINK TO CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <section id="header">
-    <header>
-      <span class="image avatar"><span class="avatar-art"></span></span>
-      <h1 id="logo"><a href="#one">Inclusive Harlem</a></h1>
-      <p>Montefiore Square redesigned for comfort,<br /> dignity, accessibility, and shared public use.</p>
+
+<section id="header">
+  <header>
+    <h1 id="logo"><a href="#one">Inclusive Harlem</a></h1>
+    <p>Montefiore Square redesigned for comfort,<br /> dignity, accessibility, and shared public use.</p>
+  </header>
+
+  <nav id="nav">
+    <ul>
+      <li><a href="#one" class="active">Intro</a></li>
+      <li><a href="#two">Overview</a></li>
+      <li><a href="#three">Problem</a></li>
+      <li><a href="#four">Users</a></li>
+      <li><a href="#five">Site</a></li>
+      <li><a href="#six">Analysis</a></li>
+      <li><a href="#seven">Research</a></li>
+      <li><a href="#eight">Concepts</a></li>
+      <li><a href="#nine">Proposal</a></li>
+      <li><a href="#ten">AI Reflection</a></li>
+      <li><a href="#eleven">Delivery</a></li>
+    </ul>
+  </nav>
+
+  <footer>
+    <ul class="icons">
+      <li>Student-built</li>
+      <li>Original content</li>
+      <li>DALL·E visuals</li>
+    </ul>
+  </footer>
+</section>
+
+<div id="wrapper">
+<div id="main">
+
+<section id="one">
+  <div class="container">
+    <header class="major">
+      <h2>Inclusive Harlem: reimagining Montefiore Square as a plaza for comfort, dignity, accessibility, and shared public life.</h2>
+      <p>An original academic redesign proposal presenting research, analysis, and a final inclusive plaza vision.</p>
     </header>
-
-    <nav id="nav">
-      <ul>
-        <li><a href="#one" class="active">Intro</a></li>
-        <li><a href="#two">Overview</a></li>
-        <li><a href="#three">Problem</a></li>
-        <li><a href="#four">Users</a></li>
-        <li><a href="#five">Site</a></li>
-        <li><a href="#six">Analysis</a></li>
-        <li><a href="#seven">Research</a></li>
-        <li><a href="#eight">Concepts</a></li>
-        <li><a href="#nine">Proposal</a></li>
-        <li><a href="#ten">AI Reflection</a></li>
-        <li><a href="#eleven">Delivery</a></li>
-      </ul>
-    </nav>
-
-    <footer>
-      <ul class="icons">
-        <li><span>Student-built</span></li>
-        <li><span>Original content</span></li>
-        <li><span>DALL·E visuals</span></li>
-      </ul>
-    </footer>
-  </section>
-
-  <div id="wrapper">
-    <div id="main">
-      <section id="one">
-        <div class="image main hero"><span class="hero-layer a"></span><span class="hero-layer b"></span><span class="hero-layer c"></span></div>
-        <div class="container">
-          <header class="major">
-            <h2>Inclusive Harlem: reimagining Montefiore Square as a plaza for comfort, dignity, accessibility, and shared public life.</h2>
-            <p>An original academic redesign proposal presenting site understanding, user analysis, concept development, AI-assisted exploration, and a final Harlem plaza vision.</p>
-          </header>
-          <ul class="actions">
-            <li><a href="#two" class="button primary">Open project overview</a></li>
-            <li><a href="#nine" class="button">See final proposal</a></li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="two">
-        <div class="container">
-          <h3>Project Overview and Rubric Alignment</h3>
-          <p>This site is built from scratch and visually references the assigned template’s layout quality and rhythm without copying it. It presents original project content tailored to Montefiore Square and the Harlem Pedestrian Plaza inclusion track.</p>
-          <div class="features">
-            <article>
-              <a class="image"><span class="thumb thumb-a"></span></a>
-              <div class="inner">
-                <h4>Website Design Quality</h4>
-                <p>Fixed sidebar navigation, strong hierarchy, responsive section flow, and polished presentation inspired by the reference style.</p>
-              </div>
-            </article>
-            <article>
-              <a class="image"><span class="thumb thumb-b"></span></a>
-              <div class="inner">
-                <h4>Original Coding Effort</h4>
-                <p>All sections, structure, writing, and visuals are student-authored rather than directly copied from a template file.</p>
-              </div>
-            </article>
-            <article>
-              <a class="image"><span class="thumb thumb-c"></span></a>
-              <div class="inner">
-                <h4>Project Content Depth</h4>
-                <p>The site explains the problem, users, site conditions, inclusion criteria, and design reasoning in a Montefiore Square-specific way.</p>
-              </div>
-            </article>
-          </div>
-          <ul class="feature-icons">
-            <li><strong>Project Title:</strong> Inclusive Harlem</li>
-            <li><strong>Goal:</strong> comfort and dignity</li>
-            <li><strong>Question:</strong> how can the plaza serve more users?</li>
-            <li><strong>Output:</strong> final redesign proposal</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="three">
-        <div class="container">
-          <h3>Problem Definition</h3>
-          <p>Harlem Pedestrian Plaza is active and visible, but not all users experience it with equal comfort, safety, dignity, or ease. The current arrangement does not consistently support older adults, families, people with disabilities, local workers, vendors, and people who need places to sit, wait, meet, or recover.</p>
-          <p>The redesign addresses a real-world urban problem: how to make a public plaza more inclusive without erasing the layered activity, community presence, and everyday rhythms that already define Harlem.</p>
-        </div>
-      </section>
-
-      <section id="four">
-        <div class="container">
-          <h3>User Diversity Analysis</h3>
-          <p>Inclusion here means more than physical access. It means that different people can arrive, move, sit, rest, meet, pass through, or remain visible in public space without discomfort, confusion, exclusion, or stigma.</p>
-          <div class="features">
-            <article>
-              <a class="image"><span class="thumb thumb-d"></span></a>
-              <div class="inner">
-                <h4>Older Adults</h4>
-                <p>Need shade, supported seating, safer crossings, clear wayfinding, and places to rest without feeling displaced or rushed.</p>
-              </div>
-            </article>
-            <article>
-              <a class="image"><span class="thumb thumb-e"></span></a>
-              <div class="inner">
-                <h4>Families and Children</h4>
-                <p>Need flexible seating clusters, visibility, stroller-friendly paths, and calmer zones away from fast circulation.</p>
-              </div>
-            </article>
-            <article>
-              <a class="image"><span class="thumb thumb-f"></span></a>
-              <div class="inner">
-                <h4>People with Disabilities</h4>
-                <p>Need barrier-free access, intuitive paths, consistent surfaces, clear curb conditions, and amenities that support independent use.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="five">
-        <div class="container">
-          <h3>Site Understanding</h3>
-          <p>The site analysis examines movement, comfort, accessibility, and community need. Existing conditions show uneven comfort distribution, circulation conflicts, limited seating variety, and weak support for longer or more dignified stays.</p>
-          <div class="box alt">
-            <div class="row gtr-50 gtr-uniform">
-              <div class="col-6"><span class="image fit site-box site-a"></span></div>
-              <div class="col-6"><span class="image fit site-box site-b"></span></div>
-              <div class="col-6"><span class="image fit site-box site-c"></span></div>
-              <div class="col-6"><span class="image fit site-box site-d"></span></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="six">
-        <div class="container">
-          <h3>Comfort, Inclusion, and Conflict Analysis</h3>
-          <div class="features">
-            <article>
-              <a class="image"><span class="thumb thumb-g"></span></a>
-              <div class="inner">
-                <h4>Comfort and Inclusion Map</h4>
-                <p>The plaza is mapped by shade, seating quality, edge activity, walking ease, noise exposure, and social comfort.</p>
-              </div>
-            </article>
-            <article>
-              <a class="image"><span class="thumb thumb-h"></span></a>
-              <div class="inner">
-                <h4>Conflict Analysis</h4>
-                <p>Key conflicts occur where waiting, vending, through-movement, and informal gathering overlap without clear spatial cues.</p>
-              </div>
-            </article>
-            <article>
-              <a class="image"><span class="thumb thumb-i"></span></a>
-              <div class="inner">
-                <h4>Accessibility Review</h4>
-                <p>The review focuses on approach routes, curb transitions, path width, surface consistency, seat access, and legibility.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="seven">
-        <div class="container">
-          <h3>Survey Findings and Precedent Comparison</h3>
-          <p>Survey feedback shows that users want the plaza to feel calmer, safer, and more comfortable for staying, not only passing through. Precedents were studied to compare seating systems, circulation strategies, shade design, and community-support amenities.</p>
-          <div class="row">
-            <div class="col-6 col-12-medium">
-              <h4>Survey Summary</h4>
-              <ul>
-                <li>Users value seating, shade, cleanliness, and clear organization.</li>
-                <li>The plaza feels visible but not equally welcoming to everyone.</li>
-                <li>Inclusive improvements should support both everyday use and community presence.</li>
-              </ul>
-            </div>
-            <div class="col-6 col-12-medium">
-              <h4>Precedent Comparison</h4>
-              <ul>
-                <li>Inclusive neighborhood plaza: varied seating and layered planting.</li>
-                <li>Shared-street public space: adaptable zones and conflict reduction.</li>
-                <li>Community care plaza: dignified rest spaces and support amenities.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="eight">
-        <div class="container">
-          <h3>Three Concept Options</h3>
-          <div class="features">
-            <article>
-              <a class="image"><span class="thumb concept-a"></span></a>
-              <div class="inner">
-                <h4>Comfort First Plaza</h4>
-                <p>Prioritizes shade, seating, greenery, and quieter stay zones to improve everyday comfort and longer visits.</p>
-              </div>
-            </article>
-            <article>
-              <a class="image"><span class="thumb concept-b"></span></a>
-              <div class="inner">
-                <h4>Shared Use Plaza</h4>
-                <p>Balances circulation, gathering, vending, and waiting through clearer zoning and adaptable public-space infrastructure.</p>
-              </div>
-            </article>
-            <article>
-              <a class="image"><span class="thumb concept-c"></span></a>
-              <div class="inner">
-                <h4>Community Support Plaza</h4>
-                <p>Centers dignity, visibility, and local care through amenities, service support, and a stronger sense of belonging.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="nine">
-        <div class="container">
-          <h3>Final Redesign Proposal</h3>
-          <p>The selected final concept combines the strongest qualities of the three options into one inclusive plaza strategy: comfort is distributed across the site, movement is easier to understand, shared use is supported rather than suppressed, and public amenities reinforce dignity for a wider mix of users.</p>
-          <div class="box alt">
-            <div class="row gtr-50 gtr-uniform">
-              <div class="col-8 col-12-medium"><span class="image fit final-plan"></span></div>
-              <div class="col-4 col-12-medium"><span class="image fit final-render"></span></div>
-            </div>
-          </div>
-          <ul class="feature-icons">
-            <li>comfort network</li>
-            <li>accessible circulation</li>
-            <li>shared public use</li>
-            <li>dignity and visibility</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="ten">
-        <div class="container">
-          <h3>Human Reflection on AI Use</h3>
-          <p>AI helped explain inclusive public-space principles, compare user needs, organize design directions, assist writing, and support DALL·E prompt development. Human judgment shaped the project argument, filtered generic suggestions, selected the final concept, and kept the work specific to Montefiore Square.</p>
-          <div class="features">
-            <article>
-              <a class="image"><span class="thumb ai-a"></span></a>
-              <div class="inner">
-                <h4>Research Support</h4>
-                <p>AI summarized inclusive public-space principles for mixed pedestrian use, waiting, and informal gathering.</p>
-              </div>
-            </article>
-            <article>
-              <a class="image"><span class="thumb ai-b"></span></a>
-              <div class="inner">
-                <h4>User Comparison</h4>
-                <p>AI compared the needs of older adults, families, vendors, commuters, and disabled users for early design framing.</p>
-              </div>
-            </article>
-            <article>
-              <a class="image"><span class="thumb ai-c"></span></a>
-              <div class="inner">
-                <h4>Concept and Visual Prompting</h4>
-                <p>AI supported concept generation and DALL·E prompt direction, but students art-directed the visuals and final choices.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="eleven">
-        <div class="container">
-          <h3>Budget, Timeline, and Final Deliverables</h3>
-          <p>Final deliverables include the user groups sheet, site analysis, comfort and inclusion map, conflict analysis, accessibility review, survey summary, precedent comparison, three concept options, final redesign, DALL·E visuals, amenities strategy, budget and timeline, poster, slides, website page, AI log, and PDF submission.</p>
-          <div class="row">
-            <div class="col-6 col-12-medium">
-              <h4>Budget</h4>
-              <ul>
-                <li>Site preparation and paving improvements</li>
-                <li>Seating, tables, and plaza furniture</li>
-                <li>Shade structures, planting, lighting, and wayfinding</li>
-                <li>Amenities, maintenance infrastructure, and community prototyping</li>
-              </ul>
-            </div>
-            <div class="col-6 col-12-medium">
-              <h4>Timeline</h4>
-              <ol>
-                <li>Research, documentation, interviews, and inclusion analysis.</li>
-                <li>Mapping, conflict analysis, accessibility review, and precedents.</li>
-                <li>Concept options, evaluation, and final selection.</li>
-                <li>Final drawings, visualizations, operations plan, and presentation package.</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
   </div>
+</section>
+
+<section id="two">
+  <div class="container">
+    <h3>Project Overview</h3>
+
+    <div class="text-grid three-up">
+      <div class="text-card">
+        <h4>Design Quality</h4>
+        <p>Clean layout, strong hierarchy, and responsive structure.</p>
+      </div>
+      <div class="text-card">
+        <h4>Original Work</h4>
+        <p>Built fully from scratch, not copied from template.</p>
+      </div>
+      <div class="text-card">
+        <h4>Content Depth</h4>
+        <p>Specific to Montefiore Square and Harlem users.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="three">
+  <div class="container">
+    <h3>Problem Definition</h3>
+    <p>The plaza does not equally support all users in comfort, accessibility, and dignity.</p>
+  </div>
+</section>
+
+<section id="four">
+  <div class="container">
+    <h3>User Diversity</h3>
+
+    <div class="text-grid three-up">
+      <div class="text-card">
+        <h4>Older Adults</h4>
+        <p>Need rest, shade, and safety.</p>
+      </div>
+      <div class="text-card">
+        <h4>Families</h4>
+        <p>Need flexible and visible seating.</p>
+      </div>
+      <div class="text-card">
+        <h4>Disabled Users</h4>
+        <p>Need barrier-free movement.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="five">
+  <div class="container">
+    <h3>Site Understanding</h3>
+
+    <div class="text-grid two-up">
+      <div class="text-card">
+        <h4>Movement</h4>
+        <p>Conflicts between walking and staying.</p>
+      </div>
+      <div class="text-card">
+        <h4>Comfort</h4>
+        <p>Uneven seating and shade distribution.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="nine">
+  <div class="container">
+    <h3>Final Proposal</h3>
+
+    <div class="text-grid two-up">
+      <div class="text-card">
+        <h4>Design Strategy</h4>
+        <p>Balanced movement, seating, and shared use.</p>
+      </div>
+      <div class="text-card">
+        <h4>Outcome</h4>
+        <p>A more inclusive and dignified public space.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</div>
+</div>
+
 </body>
 </html>
